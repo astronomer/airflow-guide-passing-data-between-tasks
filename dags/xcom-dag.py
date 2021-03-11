@@ -10,7 +10,7 @@ state = 'wa'
 
 def get_testing_increase(state, ti):
     """
-    Gets totalTestResultsIncrease field from Covid API for each state and returns value
+    Gets totalTestResultsIncrease field from Covid API for given state and returns value
     """
     res = requests.get(url+'{0}/current.json'.format(state))
     testing_increase = json.loads(res.text)['totalTestResultsIncrease']
@@ -20,7 +20,7 @@ def get_testing_increase(state, ti):
 
 def analyze_testing_increases(state, ti):
     """
-    Evaluates testing increase results and returns list of states 
+    Evaluates testing increase results 
     """
     testing_increases=ti.xcom_pull(key='testing_increase', task_ids='get_testing_increase_data_{0}'.format(state))
     print('Testing increases for {0}:'.format(state), testing_increases)

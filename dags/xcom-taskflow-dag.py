@@ -17,7 +17,7 @@ def taskflow():
     @task
     def get_testing_increase(state):
         """
-        Gets totalTestResultsIncrease field from Covid API for each state and returns value
+        Gets totalTestResultsIncrease field from Covid API for given state and returns value
         """
         res = requests.get(url+'{0}/current.json'.format(state))
         return{'testing_increase': json.loads(res.text)['totalTestResultsIncrease']}
@@ -25,9 +25,9 @@ def taskflow():
     @task
     def analyze_testing_increases(testing_increase: int):
         """
-        Evaluates testing increase results and returns list of states 
+        Evaluates testing increase results
         """
-        print('Testing increases for west coast states:', testing_increase)
+        print('Testing increases for {0}:'.format(state), testing_increase)
         #run some analysis here
 
     analyze_testing_increases(get_testing_increase(state))
