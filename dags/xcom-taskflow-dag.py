@@ -5,7 +5,7 @@ import requests
 import json
 
 url = 'https://covidtracking.com/api/v1/states/'
-state = 'wa'
+state = 'co'
 
 default_args = {
     'start_date': datetime(2021, 1, 1)
