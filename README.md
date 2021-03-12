@@ -1,5 +1,5 @@
 # airflow-guide-passing-data-between-tasks
-This repo contains an Astronomer project with multiple example DAGs showing how to pass data between your Airflow tasks. A guide discussing the DAGs and concepts in depth will be published shortly.
+This repo contains an Astronomer project with multiple example DAGs showing how to pass data between your Airflow tasks. A guide discussing the DAGs and concepts in depth can be found [here](https://www.astronomer.io/guides/airflow-passing-data-between-tasks).
 
 ## Tutorial Overview
 This tutorial covers two methods for passing data between tasks:
